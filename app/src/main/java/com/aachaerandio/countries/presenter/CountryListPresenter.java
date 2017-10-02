@@ -30,7 +30,7 @@ public class CountryListPresenter {
     }
 
     public void loadCountries() {
-
+        view.showLoading(true);
         Disposable disposable = getCountries.execute()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

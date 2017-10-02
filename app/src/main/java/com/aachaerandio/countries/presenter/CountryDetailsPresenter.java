@@ -24,7 +24,7 @@ public class CountryDetailsPresenter {
         this.getCountryDetails = getCountryDetails;
     }
 
-    public void setView(CountryDetailsFragment view) {
+    public void setView(CountryDetailsPresenter.UserInterface view) {
         this.view = view;
     }
 

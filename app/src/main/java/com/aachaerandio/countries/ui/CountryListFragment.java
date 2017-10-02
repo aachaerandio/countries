@@ -118,7 +118,7 @@ public class CountryListFragment extends Fragment implements CountryListPresente
 
     @Override
     public void showLoading(boolean isLoading) {
-
+        loading.setVisibility(isLoading ? View.VISIBLE : View.GONE);
     }
 
     public interface Callback
