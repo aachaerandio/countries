@@ -1,5 +1,8 @@
 package com.aachaerandio.countries.model;
 
+import android.net.Uri;
+
+import com.aachaerandio.countries.BuildConfig;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
@@ -259,5 +262,15 @@ public class Country {
 
     public void setRegionalBlocs(List<RegionalBloc> regionalBlocs) {
         this.regionalBlocs = regionalBlocs;
+    }
+
+    public String buildUrl() {
+        Uri builtUri = Uri.parse(BuildConfig.GEONAMES_BASE_URL)
+                .buildUpon()
+                .appendPath("x")
+                .appendPath(alpha2Code.toLowerCase() + ".gif")
+                .build();
+
+        return builtUri.toString();
     }
 }

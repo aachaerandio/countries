@@ -43,21 +43,10 @@ class CountriesAdapter extends RecyclerView.Adapter<CountriesAdapter.ViewHolder>
         holder.country = countries.get(position);
         holder.title.setText(holder.country.getName());
         Picasso.with(context)
-                .load(buildUrl(holder.country.alpha2Code))
+                .load(holder.country.buildUrl())
                 .placeholder(R.color.colorAccent)
                 .into(holder.flag);
         holder.itemView.setOnClickListener(holder);
-
-    }
-
-    private String buildUrl(String alpha2Code) {
-        Uri builtUri = Uri.parse(BuildConfig.GEONAMES_BASE_URL)
-                .buildUpon()
-                .appendPath("x")
-                .appendPath(alpha2Code.toLowerCase() + ".gif")
-                .build();
-
-        return builtUri.toString();
     }
 
     @Override

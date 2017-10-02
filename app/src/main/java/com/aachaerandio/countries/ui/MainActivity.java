@@ -1,9 +1,11 @@
 package com.aachaerandio.countries.ui;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 
+import com.aachaerandio.countries.Constants;
 import com.aachaerandio.countries.R;
 
 public class MainActivity extends AppCompatActivity implements CountryListFragment.Callback {
@@ -36,5 +38,10 @@ public class MainActivity extends AppCompatActivity implements CountryListFragme
     }
 
     private void startCountryDetailsActivity(String countryId) {
+        Intent intent = new Intent(this, CountryDetailsActivity.class);
+        Bundle extras = new Bundle();
+        extras.putString(Constants.COUNTRY_ID, countryId);
+        intent.putExtras(extras);
+        startActivity(intent);
     }
 }

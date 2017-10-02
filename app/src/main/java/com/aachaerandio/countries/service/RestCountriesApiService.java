@@ -34,6 +34,6 @@ public class RestCountriesApiService {
         Observable<List<Country>> getCountries();
 
         @GET("alpha/{code}")
-        Observable<List<Country>> getCountryByCode(@Path("code") String code);
+        Observable<Country> getCountryByCode(@Path("code") String code);
     }
 }

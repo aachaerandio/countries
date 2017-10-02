@@ -2,6 +2,7 @@ package com.aachaerandio.countries.presenter;
 
 import com.aachaerandio.countries.domain.di.CountriesModule;
 import com.aachaerandio.countries.service.di.RestCountriesServiceModule;
+import com.aachaerandio.countries.ui.CountryDetailsFragment;
 import com.aachaerandio.countries.ui.CountryListFragment;
 
 import javax.inject.Singleton;
@@ -14,5 +15,9 @@ public interface CountryPresenterComponent {
 
     CountryListPresenter countryListPresenter();
 
+    CountryDetailsPresenter countryDetailsPresenter();
+
     void inject(CountryListFragment countryListFragment);
+
+    void inject(CountryDetailsFragment countryDetailsFragment);
 }
