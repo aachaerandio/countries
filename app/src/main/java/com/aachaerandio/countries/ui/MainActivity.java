@@ -6,7 +6,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.aachaerandio.countries.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements CountryListFragment.Callback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,5 +28,13 @@ public class MainActivity extends AppCompatActivity {
             getSupportActionBar().setTitle(R.string.countries_app);
             getSupportActionBar().setDisplayShowTitleEnabled(true);
         }
+    }
+
+    @Override
+    public void onCountryClicked(String countryId) {
+        startCountryDetailsActivity(countryId);
+    }
+
+    private void startCountryDetailsActivity(String countryId) {
     }
 }
